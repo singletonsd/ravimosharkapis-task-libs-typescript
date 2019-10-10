@@ -1,0 +1,78 @@
+{
+  "name": "@ravimosharksas/apis-task-libs-typescript",
+  "version": "1.0.0-SNAPSHOT.190924134440",
+  "description": "Swagger client for @ravimosharksas/apis-task-libs-angular",
+  "keywords": [
+    "swagger-client",
+    "angular-library",
+    "javascript-library",
+    "typescript-library",
+    "singletonsd",
+    "ravimoshark"
+  ],
+  "license": "SEE LICENSE IN LICENSE file",
+  "homepage": "https://gitlab.com/ravimosharksas/apis/task/libs/typescript",
+  "bugs": {
+    "url": "https://gitlab.com/ravimosharksas/apis/task/libs/typescript",
+    "email": "patricio.perpetua.arg@gmail.com"
+  },
+  "author": {
+    "name": "Patricio Perpetua",
+    "email": "patricio.perpetua.arg@gmail.com",
+    "url": "https://patricioperpetua.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/ravimosharksas/apis/task/libs/typescript.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "postinstall": "npm-install-peers",
+    "install-peers": "npm-install-peers",
+    "build-ngc": "ngc -h",
+    "build": "ng-packagr -p ng-package.json",
+    "check": "npm-check",
+    "generate": "./scripts/generate.sh",
+    "generate-local": "./scripts/generate.sh ../../documentation/dist/openapi.json",
+    "lint": "echo skipping lint rules...",
+    "publish": "npm publish dist/ --access public",
+    "publish-snapshot": "npm run publish --tag snapshot",
+    "publish-beta": "npm run publish --tag beta",
+    "publish-alpha": "npm run publish --tag alpha",
+    "snapshot": "npm-snapshot $(date -u '+%y%m%d%H%M%S')",
+    "version": "echo $(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g')"
+  },
+  "peerDependencies": {
+    "@angular/core": "7.2.15",
+    "@angular/http": "7.2.15",
+    "@angular/common": "7.2.15",
+    "@angular/compiler": "7.2.15",
+    "core-js": "^2.4.0",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "6.5.2",
+    "rxjs-compat": "^6.5.3",
+    "typescript": "3.2.4",
+    "zone.js": "0.9.1"
+  },
+  "devDependencies": {
+    "@angular/common": "7.2.15",
+    "@angular/compiler": "7.2.15",
+    "@angular/compiler-cli": "7.2.15",
+    "@angular/core": "7.2.15",
+    "@angular/http": "7.2.15",
+    "@angular/platform-browser": "7.2.15",
+    "ng-packagr": "5.5.0",
+    "npm-check": "5.9.0",
+    "npm-install-peers": "^1.2.1",
+    "npm-snapshot": "^1.0.3",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "6.5.2",
+    "typescript": "3.2.4",
+    "zone.js": "0.10.2"
+  },
+  "dependencies": {
+    "rxjs-compat": "^6.5.3"
+  }
+}

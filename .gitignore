@@ -1,0 +1,9 @@
+/node_modules/
+bundle.js
+main.js
+/dist/
+dist*
+/binaries/
+/.ng*/
+.npmrc
+openapi.json
