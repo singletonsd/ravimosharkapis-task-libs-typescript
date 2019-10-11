@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 import { TasksService } from './api/tasks.service';
+import { TechniciansService } from './api/technicians.service';
 import { VisitsService } from './api/visits.service';
 
 @NgModule({
@@ -12,6 +13,7 @@ import { VisitsService } from './api/visits.service';
   exports:      [],
   providers: [
     TasksService,
+    TechniciansService,
     VisitsService ]
 })
 export class ApiModule {

@@ -20,16 +20,16 @@ import { Observable }                                        from 'rxjs';
 import { CustomError } from '../model/customError';
 import { Deleted } from '../model/deleted';
 import { IdInteger } from '../model/idInteger';
-import { InlineResponse2002 } from '../model/inlineResponse2002';
-import { Visits } from '../model/visits';
+import { InlineResponse2001 } from '../model/inlineResponse2001';
+import { Technicians } from '../model/technicians';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
-import { VisitsServiceInterface }                            from './visits.serviceInterface';
+import { TechniciansServiceInterface }                            from './technicians.serviceInterface';
 
 
 @Injectable()
-export class VisitsService implements VisitsServiceInterface {
+export class TechniciansService implements TechniciansServiceInterface {
 
     protected basePath = 'http://localhost:8001';
     public defaultHeaders = new HttpHeaders();
@@ -61,19 +61,19 @@ export class VisitsService implements VisitsServiceInterface {
 
 
     /**
-     * Add one visit.
-     * Add one visit.
+     * Add one technician.
+     * Add one technician.
      * @param body 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public addVisit(body: Visits, observe?: 'body', reportProgress?: boolean): Observable<Visits>;
-    public addVisit(body: Visits, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Visits>>;
-    public addVisit(body: Visits, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Visits>>;
-    public addVisit(body: Visits, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public addTechnician(body: Technicians, observe?: 'body', reportProgress?: boolean): Observable<Technicians>;
+    public addTechnician(body: Technicians, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Technicians>>;
+    public addTechnician(body: Technicians, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Technicians>>;
+    public addTechnician(body: Technicians, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         if (body === null || body === undefined) {
-            throw new Error('Required parameter body was null or undefined when calling addVisit.');
+            throw new Error('Required parameter body was null or undefined when calling addTechnician.');
         }
 
         let headers = this.defaultHeaders;
@@ -96,7 +96,7 @@ export class VisitsService implements VisitsServiceInterface {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.post<Visits>(`${this.basePath}/visits`,
+        return this.httpClient.post<Technicians>(`${this.basePath}/technicians`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -108,19 +108,19 @@ export class VisitsService implements VisitsServiceInterface {
     }
 
     /**
-     * Delete one visit.
-     * Delete one visit.
+     * Delete one technician.
+     * Delete one technician.
      * @param id id to delete or search
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public deleteVisit(id: number, observe?: 'body', reportProgress?: boolean): Observable<IdInteger>;
-    public deleteVisit(id: number, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<IdInteger>>;
-    public deleteVisit(id: number, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<IdInteger>>;
-    public deleteVisit(id: number, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public deleteTechnician(id: number, observe?: 'body', reportProgress?: boolean): Observable<IdInteger>;
+    public deleteTechnician(id: number, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<IdInteger>>;
+    public deleteTechnician(id: number, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<IdInteger>>;
+    public deleteTechnician(id: number, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling deleteVisit.');
+            throw new Error('Required parameter id was null or undefined when calling deleteTechnician.');
         }
 
         let headers = this.defaultHeaders;
@@ -138,7 +138,7 @@ export class VisitsService implements VisitsServiceInterface {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.delete<IdInteger>(`${this.basePath}/visits/${encodeURIComponent(String(id))}`,
+        return this.httpClient.delete<IdInteger>(`${this.basePath}/technicians/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -149,19 +149,19 @@ export class VisitsService implements VisitsServiceInterface {
     }
 
     /**
-     * Edit one visit.
-     * Edit one visit.
+     * Edit one technician.
+     * Edit one technician.
      * @param body 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public editVisit(body: Visits, observe?: 'body', reportProgress?: boolean): Observable<Visits>;
-    public editVisit(body: Visits, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Visits>>;
-    public editVisit(body: Visits, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Visits>>;
-    public editVisit(body: Visits, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public editTechnician(body: Technicians, observe?: 'body', reportProgress?: boolean): Observable<Technicians>;
+    public editTechnician(body: Technicians, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Technicians>>;
+    public editTechnician(body: Technicians, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Technicians>>;
+    public editTechnician(body: Technicians, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         if (body === null || body === undefined) {
-            throw new Error('Required parameter body was null or undefined when calling editVisit.');
+            throw new Error('Required parameter body was null or undefined when calling editTechnician.');
         }
 
         let headers = this.defaultHeaders;
@@ -184,7 +184,7 @@ export class VisitsService implements VisitsServiceInterface {
             headers = headers.set('Content-Type', httpContentTypeSelected);
         }
 
-        return this.httpClient.put<Visits>(`${this.basePath}/visits`,
+        return this.httpClient.put<Technicians>(`${this.basePath}/technicians`,
             body,
             {
                 withCredentials: this.configuration.withCredentials,
@@ -196,20 +196,20 @@ export class VisitsService implements VisitsServiceInterface {
     }
 
     /**
-     * Get one visit.
-     * Get one visit.
+     * Get one technician.
+     * Get one technician.
      * @param id id to delete or search
      * @param deleted Get all, deleted, not deleted data. Default not deleted.
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getVisitById(id: number, deleted?: Deleted, observe?: 'body', reportProgress?: boolean): Observable<Visits>;
-    public getVisitById(id: number, deleted?: Deleted, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Visits>>;
-    public getVisitById(id: number, deleted?: Deleted, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Visits>>;
-    public getVisitById(id: number, deleted?: Deleted, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public getTechnicianById(id: number, deleted?: Deleted, observe?: 'body', reportProgress?: boolean): Observable<Technicians>;
+    public getTechnicianById(id: number, deleted?: Deleted, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Technicians>>;
+    public getTechnicianById(id: number, deleted?: Deleted, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Technicians>>;
+    public getTechnicianById(id: number, deleted?: Deleted, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         if (id === null || id === undefined) {
-            throw new Error('Required parameter id was null or undefined when calling getVisitById.');
+            throw new Error('Required parameter id was null or undefined when calling getTechnicianById.');
         }
 
 
@@ -233,7 +233,7 @@ export class VisitsService implements VisitsServiceInterface {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<Visits>(`${this.basePath}/visits/${encodeURIComponent(String(id))}`,
+        return this.httpClient.get<Technicians>(`${this.basePath}/technicians/${encodeURIComponent(String(id))}`,
             {
                 params: queryParameters,
                 withCredentials: this.configuration.withCredentials,
@@ -245,8 +245,8 @@ export class VisitsService implements VisitsServiceInterface {
     }
 
     /**
-     * Get all visits.
-     * Get all visits.
+     * Get all technicians.
+     * Get all technicians.
      * @param skip number of item to skip
      * @param limit max records to return
      * @param orderBy order by property.
@@ -257,10 +257,10 @@ export class VisitsService implements VisitsServiceInterface {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse2002>;
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse2002>>;
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse2002>>;
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public getTechnicians(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse2001>;
+    public getTechnicians(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse2001>>;
+    public getTechnicians(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse2001>>;
+    public getTechnicians(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
 
 
@@ -307,7 +307,7 @@ export class VisitsService implements VisitsServiceInterface {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<InlineResponse2002>(`${this.basePath}/visits`,
+        return this.httpClient.get<InlineResponse2001>(`${this.basePath}/technicians`,
             {
                 params: queryParameters,
                 withCredentials: this.configuration.withCredentials,

@@ -13,12 +13,12 @@
 /**
  * Type of task.
  */
-export type TaskTypes = 'CANCELLATION' | 'CHANGE_PIECE' | 'STOP_PARCIAL' | 'STOP_TOTAL' | 'PROBLEM_RESULT' | 'UNKNOWN';
+export type TaskTypes = 'CANCELLATION' | 'CHANGE_PIECE' | 'STOP_PARTIAL' | 'STOP_TOTAL' | 'PROBLEM_RESULT' | 'UNKNOWN';
 
 export const TaskTypes = {
     CANCELLATION: 'CANCELLATION' as TaskTypes,
     CHANGEPIECE: 'CHANGE_PIECE' as TaskTypes,
-    STOPPARCIAL: 'STOP_PARCIAL' as TaskTypes,
+    STOPPARTIAL: 'STOP_PARTIAL' as TaskTypes,
     STOPTOTAL: 'STOP_TOTAL' as TaskTypes,
     PROBLEMRESULT: 'PROBLEM_RESULT' as TaskTypes,
     UNKNOWN: 'UNKNOWN' as TaskTypes

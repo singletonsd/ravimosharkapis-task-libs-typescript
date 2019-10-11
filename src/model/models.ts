@@ -5,6 +5,7 @@ export * from './deleted';
 export * from './idInteger';
 export * from './inlineResponse200';
 export * from './inlineResponse2001';
+export * from './inlineResponse2002';
 export * from './interventions';
 export * from './machines';
 export * from './metadata';

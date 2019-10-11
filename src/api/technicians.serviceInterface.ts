@@ -17,50 +17,50 @@ import { Observable }                                        from 'rxjs/Observab
 import { CustomError } from '../model/customError';
 import { Deleted } from '../model/deleted';
 import { IdInteger } from '../model/idInteger';
-import { InlineResponse2002 } from '../model/inlineResponse2002';
-import { Visits } from '../model/visits';
+import { InlineResponse2001 } from '../model/inlineResponse2001';
+import { Technicians } from '../model/technicians';
 
 
 import { Configuration }                                     from '../configuration';
 
 
-export interface VisitsServiceInterface {
+export interface TechniciansServiceInterface {
     defaultHeaders: HttpHeaders;
     configuration: Configuration;
     
 
     /**
-    * Add one visit.
-    * Add one visit.
+    * Add one technician.
+    * Add one technician.
     * @param body 
     */
-    addVisit(body: Visits, extraHttpRequestParams?: any): Observable<Visits>;
+    addTechnician(body: Technicians, extraHttpRequestParams?: any): Observable<Technicians>;
 
     /**
-    * Delete one visit.
-    * Delete one visit.
+    * Delete one technician.
+    * Delete one technician.
     * @param id id to delete or search
     */
-    deleteVisit(id: number, extraHttpRequestParams?: any): Observable<IdInteger>;
+    deleteTechnician(id: number, extraHttpRequestParams?: any): Observable<IdInteger>;
 
     /**
-    * Edit one visit.
-    * Edit one visit.
+    * Edit one technician.
+    * Edit one technician.
     * @param body 
     */
-    editVisit(body: Visits, extraHttpRequestParams?: any): Observable<Visits>;
+    editTechnician(body: Technicians, extraHttpRequestParams?: any): Observable<Technicians>;
 
     /**
-    * Get one visit.
-    * Get one visit.
+    * Get one technician.
+    * Get one technician.
     * @param id id to delete or search
     * @param deleted Get all, deleted, not deleted data. Default not deleted.
     */
-    getVisitById(id: number, deleted?: Deleted, extraHttpRequestParams?: any): Observable<Visits>;
+    getTechnicianById(id: number, deleted?: Deleted, extraHttpRequestParams?: any): Observable<Technicians>;
 
     /**
-    * Get all visits.
-    * Get all visits.
+    * Get all technicians.
+    * Get all technicians.
     * @param skip number of item to skip
     * @param limit max records to return
     * @param orderBy order by property.
@@ -69,6 +69,6 @@ export interface VisitsServiceInterface {
     * @param metadata If metadata is needed (for pagination controls)
     * @param refClient Data from a desired contract
     */
-    getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, extraHttpRequestParams?: any): Observable<InlineResponse2002>;
+    getTechnicians(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, extraHttpRequestParams?: any): Observable<InlineResponse2001>;
 
 }
