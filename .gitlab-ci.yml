@@ -1,7 +1,7 @@
 image: node:8-alpine
 
 variables:
-  ORIGINAL_REPOSITORY: ravimosharksas/apis/contract/libs/typescript
+  ORIGINAL_REPOSITORY: ravimosharksas/apis/task/libs/typescript
 
 stages:
   - generate
