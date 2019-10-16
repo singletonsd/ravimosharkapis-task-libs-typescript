@@ -17,7 +17,7 @@ import { Observable }                                        from 'rxjs/Observab
 import { CustomError } from '../model/customError';
 import { Deleted } from '../model/deleted';
 import { IdInteger } from '../model/idInteger';
-import { InlineResponse2001 } from '../model/inlineResponse2001';
+import { InlineResponse2002 } from '../model/inlineResponse2002';
 import { Technicians } from '../model/technicians';
 
 
@@ -69,6 +69,6 @@ export interface TechniciansServiceInterface {
     * @param metadata If metadata is needed (for pagination controls)
     * @param refClient Data from a desired contract
     */
-    getTechnicians(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, extraHttpRequestParams?: any): Observable<InlineResponse2001>;
+    getTechnicians(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, extraHttpRequestParams?: any): Observable<InlineResponse2002>;
 
 }

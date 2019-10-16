@@ -18,50 +18,50 @@ import { CustomError } from '../model/customError';
 import { Deleted } from '../model/deleted';
 import { Finished } from '../model/finished';
 import { IdInteger } from '../model/idInteger';
-import { InlineResponse2001 } from '../model/inlineResponse2001';
-import { Tasks } from '../model/tasks';
+import { InlineResponse200 } from '../model/inlineResponse200';
+import { Interventions } from '../model/interventions';
 
 
 import { Configuration }                                     from '../configuration';
 
 
-export interface TasksServiceInterface {
+export interface InterventionsServiceInterface {
     defaultHeaders: HttpHeaders;
     configuration: Configuration;
     
 
     /**
-    * Add one task.
-    * Add one task.
+    * Add one intervention.
+    * Add one intervention.
     * @param body 
     */
-    addTask(body: Tasks, extraHttpRequestParams?: any): Observable<Tasks>;
+    addIntervention(body: Interventions, extraHttpRequestParams?: any): Observable<Interventions>;
 
     /**
-    * Delete one task.
-    * Delete one task.
+    * Delete one intervention.
+    * Delete one intervention.
     * @param id id to delete or search
     */
-    deleteTask(id: number, extraHttpRequestParams?: any): Observable<IdInteger>;
+    deleteIntervention(id: number, extraHttpRequestParams?: any): Observable<IdInteger>;
 
     /**
-    * Edit one task.
-    * Edit one task.
+    * Edit one intervention.
+    * Edit one intervention.
     * @param body 
     */
-    editTask(body: Tasks, extraHttpRequestParams?: any): Observable<Tasks>;
+    editIntervention(body: Interventions, extraHttpRequestParams?: any): Observable<Interventions>;
 
     /**
-    * Get one task.
-    * Get one task.
+    * Get one intervention.
+    * Get one intervention.
     * @param id id to delete or search
     * @param deleted Get all, deleted, not deleted data. Default not deleted.
     */
-    getTaskById(id: number, deleted?: Deleted, extraHttpRequestParams?: any): Observable<Tasks>;
+    getInterventionById(id: number, deleted?: Deleted, extraHttpRequestParams?: any): Observable<Interventions>;
 
     /**
-    * Get all tasks.
-    * Get all tasks.
+    * Get all interventions.
+    * Get all interventions.
     * @param skip number of item to skip
     * @param limit max records to return
     * @param orderBy order by property.
@@ -71,11 +71,9 @@ export interface TasksServiceInterface {
     * @param refClient Data from a desired contract
     * @param finished Get all, finished or unfinished task. Default not finished.
     * @param technicianId Data from a desired technician
-    * @param dateFixFrom Date fix from
-    * @param dateCallUntil Date call until
-    * @param dateCallFrom Date call from
-    * @param dateFixUntil Date fix until
+    * @param dateFrom Date from
+    * @param dateUntil Date until
     */
-    getTasks(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: string, dateFixFrom?: string, dateCallUntil?: string, dateCallFrom?: string, dateFixUntil?: string, extraHttpRequestParams?: any): Observable<InlineResponse2001>;
+    getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: string, dateFrom?: string, dateUntil?: string, extraHttpRequestParams?: any): Observable<InlineResponse200>;
 
 }

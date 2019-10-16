@@ -21,12 +21,12 @@ export interface Visits {
     id?: number;
     addressId?: number;
     address?: Addresses;
-    technianId?: number;
-    technian?: Technicians;
+    technicianId?: number;
+    technician?: Technicians;
     taskType?: TaskTypes;
     machine?: Machines;
     machineId?: number;
-    dateVisite?: string;
+    dateVisit?: string;
     comments?: string;
     th?: number;
     tempWashing?: number;

@@ -3,6 +3,7 @@ import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
 
+import { InterventionsService } from './api/interventions.service';
 import { TasksService } from './api/tasks.service';
 import { TechniciansService } from './api/technicians.service';
 import { VisitsService } from './api/visits.service';
@@ -12,6 +13,7 @@ import { VisitsService } from './api/visits.service';
   declarations: [],
   exports:      [],
   providers: [
+    InterventionsService,
     TasksService,
     TechniciansService,
     VisitsService ]

@@ -9,10 +9,10 @@
  * https://github.com/swagger-api/swagger-codegen.git
  * Do not edit the class manually.
  */import { Metadata } from './metadata';
-import { Visits } from './visits';
+import { Technicians } from './technicians';
 
 
 export interface InlineResponse2002 { 
     metadata?: Metadata;
-    items?: Array<Visits>;
+    items?: Array<Technicians>;
 }

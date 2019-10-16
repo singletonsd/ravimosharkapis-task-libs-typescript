@@ -17,7 +17,7 @@ import { Observable }                                        from 'rxjs/Observab
 import { CustomError } from '../model/customError';
 import { Deleted } from '../model/deleted';
 import { IdInteger } from '../model/idInteger';
-import { InlineResponse2002 } from '../model/inlineResponse2002';
+import { InlineResponse2003 } from '../model/inlineResponse2003';
 import { Visits } from '../model/visits';
 
 
@@ -68,7 +68,8 @@ export interface VisitsServiceInterface {
     * @param deleted Get all, deleted, not deleted data. Default not deleted.
     * @param metadata If metadata is needed (for pagination controls)
     * @param refClient Data from a desired contract
+    * @param technicianId Data from a desired technician
     */
-    getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, extraHttpRequestParams?: any): Observable<InlineResponse2002>;
+    getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, extraHttpRequestParams?: any): Observable<InlineResponse2003>;
 
 }

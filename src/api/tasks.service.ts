@@ -19,8 +19,9 @@ import { Observable }                                        from 'rxjs';
 
 import { CustomError } from '../model/customError';
 import { Deleted } from '../model/deleted';
+import { Finished } from '../model/finished';
 import { IdInteger } from '../model/idInteger';
-import { InlineResponse200 } from '../model/inlineResponse200';
+import { InlineResponse2001 } from '../model/inlineResponse2001';
 import { Tasks } from '../model/tasks';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -254,13 +255,25 @@ export class TasksService implements TasksServiceInterface {
      * @param deleted Get all, deleted, not deleted data. Default not deleted.
      * @param metadata If metadata is needed (for pagination controls)
      * @param refClient Data from a desired contract
+     * @param finished Get all, finished or unfinished task. Default not finished.
+     * @param technicianId Data from a desired technician
+     * @param dateFixFrom Date fix from
+     * @param dateCallUntil Date call until
+     * @param dateCallFrom Date call from
+     * @param dateFixUntil Date fix until
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getTasks(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse200>;
-    public getTasks(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse200>>;
-    public getTasks(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse200>>;
-    public getTasks(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public getTasks(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: string, dateFixFrom?: string, dateCallUntil?: string, dateCallFrom?: string, dateFixUntil?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse2001>;
+    public getTasks(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: string, dateFixFrom?: string, dateCallUntil?: string, dateCallFrom?: string, dateFixUntil?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse2001>>;
+    public getTasks(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: string, dateFixFrom?: string, dateCallUntil?: string, dateCallFrom?: string, dateFixUntil?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse2001>>;
+    public getTasks(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: string, dateFixFrom?: string, dateCallUntil?: string, dateCallFrom?: string, dateFixUntil?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+
+
+
+
+
 
 
 
@@ -291,6 +304,24 @@ export class TasksService implements TasksServiceInterface {
         if (refClient !== undefined && refClient !== null) {
             queryParameters = queryParameters.set('refClient', <any>refClient);
         }
+        if (finished !== undefined && finished !== null) {
+            queryParameters = queryParameters.set('finished', <any>finished);
+        }
+        if (technicianId !== undefined && technicianId !== null) {
+            queryParameters = queryParameters.set('technicianId', <any>technicianId);
+        }
+        if (dateFixFrom !== undefined && dateFixFrom !== null) {
+            queryParameters = queryParameters.set('dateFixFrom', <any>dateFixFrom);
+        }
+        if (dateCallUntil !== undefined && dateCallUntil !== null) {
+            queryParameters = queryParameters.set('dateCallUntil', <any>dateCallUntil);
+        }
+        if (dateCallFrom !== undefined && dateCallFrom !== null) {
+            queryParameters = queryParameters.set('dateCallFrom', <any>dateCallFrom);
+        }
+        if (dateFixUntil !== undefined && dateFixUntil !== null) {
+            queryParameters = queryParameters.set('dateFixUntil', <any>dateFixUntil);
+        }
 
         let headers = this.defaultHeaders;
 
@@ -307,7 +338,7 @@ export class TasksService implements TasksServiceInterface {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<InlineResponse200>(`${this.basePath}/tasks`,
+        return this.httpClient.get<InlineResponse2001>(`${this.basePath}/tasks`,
             {
                 params: queryParameters,
                 withCredentials: this.configuration.withCredentials,

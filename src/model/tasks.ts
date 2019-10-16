@@ -22,8 +22,8 @@ export interface Tasks {
     id?: number;
     addressId?: number;
     address?: Addresses;
-    technianId?: number;
-    technian?: Technicians;
+    technicianId?: number;
+    technician?: Technicians;
     taskType?: TaskTypes;
     machine?: Machines;
     machineId?: number;
@@ -33,6 +33,7 @@ export interface Tasks {
     solution?: string;
     priority?: number;
     initiator?: string;
+    taskTime?: number;
     ratingClient?: number;
     ratingTech?: number;
     interventions?: Array<Interventions>;
