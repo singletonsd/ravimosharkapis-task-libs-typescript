@@ -54,7 +54,7 @@ ${SWAGGER_COMMAND} \
     -c swaggerconfig.json \
     -o src \
     --model-package=models --api-package=api \
-    --git-repo-id=ravimosharksas/apis/contract/libs/angular
+    --git-repo-id=ravimosharksas/apis/task/libs/typescript
 
 # TO KNOW ABOUT AVAILABLE CONFIGURATION PROPERTIES
 # java -jar ${SWAGGER_JAR} config-help -l typescript-angular
