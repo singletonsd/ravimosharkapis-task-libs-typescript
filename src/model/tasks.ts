@@ -33,6 +33,7 @@ export interface Tasks {
     solution?: string;
     priority?: number;
     initiator?: Technicians;
+    initiatorId?: number;
     taskTime?: number;
     ratingClient?: number;
     ratingTech?: number;
