@@ -68,7 +68,7 @@ export interface InterventionsServiceInterface {
     * @param filterBy filter data.
     * @param deleted Get all, deleted, not deleted data. Default not deleted.
     * @param metadata If metadata is needed (for pagination controls)
-    * @param refClient Data from a desired contract
+    * @param refClient Data from a desired client
     * @param finished Get all, finished or unfinished task. Default not finished.
     * @param technicianId Data from a desired technician
     * @param dateFrom Date from
