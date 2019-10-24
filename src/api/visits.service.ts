@@ -260,10 +260,10 @@ export class VisitsService implements VisitsServiceInterface {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, dateFrom?: string, dateUntil?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse2003>;
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, dateFrom?: string, dateUntil?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse2003>>;
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, dateFrom?: string, dateUntil?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse2003>>;
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, dateFrom?: string, dateUntil?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: number, dateFrom?: string, dateUntil?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse2003>;
+    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: number, dateFrom?: string, dateUntil?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse2003>>;
+    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: number, dateFrom?: string, dateUntil?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse2003>>;
+    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: number, dateFrom?: string, dateUntil?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
 
 

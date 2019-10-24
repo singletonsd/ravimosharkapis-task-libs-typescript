@@ -72,6 +72,6 @@ export interface VisitsServiceInterface {
     * @param dateFrom Date from
     * @param dateUntil Date until
     */
-    getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, dateFrom?: string, dateUntil?: string, extraHttpRequestParams?: any): Observable<InlineResponse2003>;
+    getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: number, dateFrom?: string, dateUntil?: string, extraHttpRequestParams?: any): Observable<InlineResponse2003>;
 
 }

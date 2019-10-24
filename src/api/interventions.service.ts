@@ -261,10 +261,10 @@ export class InterventionsService implements InterventionsServiceInterface {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, taskId?: string, dateFrom?: string, dateUntil?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse200>;
-    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, taskId?: string, dateFrom?: string, dateUntil?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse200>>;
-    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, taskId?: string, dateFrom?: string, dateUntil?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse200>>;
-    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, taskId?: string, dateFrom?: string, dateUntil?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: number, taskId?: number, dateFrom?: string, dateUntil?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse200>;
+    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: number, taskId?: number, dateFrom?: string, dateUntil?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse200>>;
+    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: number, taskId?: number, dateFrom?: string, dateUntil?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse200>>;
+    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: number, taskId?: number, dateFrom?: string, dateUntil?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
 
 

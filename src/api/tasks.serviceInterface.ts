@@ -76,6 +76,6 @@ export interface TasksServiceInterface {
     * @param dateCallFrom Date call from
     * @param dateFixUntil Date fix until
     */
-    getTasks(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: string, dateFixFrom?: string, dateCallUntil?: string, dateCallFrom?: string, dateFixUntil?: string, extraHttpRequestParams?: any): Observable<InlineResponse2001>;
+    getTasks(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: number, dateFixFrom?: string, dateCallUntil?: string, dateCallFrom?: string, dateFixUntil?: string, extraHttpRequestParams?: any): Observable<InlineResponse2001>;
 
 }

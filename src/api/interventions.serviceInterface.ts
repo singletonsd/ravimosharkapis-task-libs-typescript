@@ -73,6 +73,6 @@ export interface InterventionsServiceInterface {
     * @param dateFrom Date from
     * @param dateUntil Date until
     */
-    getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, taskId?: string, dateFrom?: string, dateUntil?: string, extraHttpRequestParams?: any): Observable<InlineResponse200>;
+    getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: number, taskId?: number, dateFrom?: string, dateUntil?: string, extraHttpRequestParams?: any): Observable<InlineResponse200>;
 
 }
