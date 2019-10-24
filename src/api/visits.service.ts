@@ -254,14 +254,18 @@ export class VisitsService implements VisitsServiceInterface {
      * @param deleted Get all, deleted, not deleted data. Default not deleted.
      * @param metadata If metadata is needed (for pagination controls)
      * @param refClient Data from a desired client
-     * @param technicianId Data from a desired technician
+     * @param technicianId Id from a desired technician
+     * @param dateFrom Date from
+     * @param dateUntil Date until
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse2003>;
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse2003>>;
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse2003>>;
-    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, dateFrom?: string, dateUntil?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse2003>;
+    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, dateFrom?: string, dateUntil?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse2003>>;
+    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, dateFrom?: string, dateUntil?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse2003>>;
+    public getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, dateFrom?: string, dateUntil?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+
 
 
 
@@ -295,6 +299,12 @@ export class VisitsService implements VisitsServiceInterface {
         }
         if (technicianId !== undefined && technicianId !== null) {
             queryParameters = queryParameters.set('technicianId', <any>technicianId);
+        }
+        if (dateFrom !== undefined && dateFrom !== null) {
+            queryParameters = queryParameters.set('dateFrom', <any>dateFrom);
+        }
+        if (dateUntil !== undefined && dateUntil !== null) {
+            queryParameters = queryParameters.set('dateUntil', <any>dateUntil);
         }
 
         let headers = this.defaultHeaders;

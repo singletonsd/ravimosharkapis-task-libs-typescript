@@ -68,8 +68,10 @@ export interface VisitsServiceInterface {
     * @param deleted Get all, deleted, not deleted data. Default not deleted.
     * @param metadata If metadata is needed (for pagination controls)
     * @param refClient Data from a desired client
-    * @param technicianId Data from a desired technician
+    * @param technicianId Id from a desired technician
+    * @param dateFrom Date from
+    * @param dateUntil Date until
     */
-    getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, extraHttpRequestParams?: any): Observable<InlineResponse2003>;
+    getVisits(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, dateFrom?: string, dateUntil?: string, extraHttpRequestParams?: any): Observable<InlineResponse2003>;
 
 }

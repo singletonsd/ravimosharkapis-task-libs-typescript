@@ -70,7 +70,7 @@ export interface TasksServiceInterface {
     * @param metadata If metadata is needed (for pagination controls)
     * @param refClient Data from a desired client
     * @param finished Get all, finished or unfinished task. Default not finished.
-    * @param technicianId Data from a desired technician
+    * @param technicianId Id from a desired technician
     * @param dateFixFrom Date fix from
     * @param dateCallUntil Date call until
     * @param dateCallFrom Date call from

@@ -19,7 +19,6 @@ import { Observable }                                        from 'rxjs';
 
 import { CustomError } from '../model/customError';
 import { Deleted } from '../model/deleted';
-import { Finished } from '../model/finished';
 import { IdInteger } from '../model/idInteger';
 import { InlineResponse200 } from '../model/inlineResponse200';
 import { Interventions } from '../model/interventions';
@@ -255,17 +254,17 @@ export class InterventionsService implements InterventionsServiceInterface {
      * @param deleted Get all, deleted, not deleted data. Default not deleted.
      * @param metadata If metadata is needed (for pagination controls)
      * @param refClient Data from a desired client
-     * @param finished Get all, finished or unfinished task. Default not finished.
-     * @param technicianId Data from a desired technician
+     * @param technicianId Id from a desired technician
+     * @param taskId Id of the task associated
      * @param dateFrom Date from
      * @param dateUntil Date until
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: string, dateFrom?: string, dateUntil?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse200>;
-    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: string, dateFrom?: string, dateUntil?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse200>>;
-    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: string, dateFrom?: string, dateUntil?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse200>>;
-    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, finished?: Finished, technicianId?: string, dateFrom?: string, dateUntil?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, taskId?: string, dateFrom?: string, dateUntil?: string, observe?: 'body', reportProgress?: boolean): Observable<InlineResponse200>;
+    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, taskId?: string, dateFrom?: string, dateUntil?: string, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<InlineResponse200>>;
+    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, taskId?: string, dateFrom?: string, dateUntil?: string, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<InlineResponse200>>;
+    public getInterventions(skip?: number, limit?: number, orderBy?: string, filterBy?: string, deleted?: Deleted, metadata?: boolean, refClient?: string, technicianId?: string, taskId?: string, dateFrom?: string, dateUntil?: string, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
 
 
@@ -300,11 +299,11 @@ export class InterventionsService implements InterventionsServiceInterface {
         if (refClient !== undefined && refClient !== null) {
             queryParameters = queryParameters.set('refClient', <any>refClient);
         }
-        if (finished !== undefined && finished !== null) {
-            queryParameters = queryParameters.set('finished', <any>finished);
-        }
         if (technicianId !== undefined && technicianId !== null) {
             queryParameters = queryParameters.set('technicianId', <any>technicianId);
+        }
+        if (taskId !== undefined && taskId !== null) {
+            queryParameters = queryParameters.set('taskId', <any>taskId);
         }
         if (dateFrom !== undefined && dateFrom !== null) {
             queryParameters = queryParameters.set('dateFrom', <any>dateFrom);
