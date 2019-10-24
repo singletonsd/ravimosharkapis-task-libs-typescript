@@ -253,7 +253,7 @@ export class VisitsService implements VisitsServiceInterface {
      * @param filterBy filter data.
      * @param deleted Get all, deleted, not deleted data. Default not deleted.
      * @param metadata If metadata is needed (for pagination controls)
-     * @param refClient Data from a desired contract
+     * @param refClient Data from a desired client
      * @param technicianId Data from a desired technician
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.

@@ -28,6 +28,6 @@ export interface Addresses {
     name?: string;
     postalCode?: string;
     streetName?: string;
-    streetNumber?: number;
+    streetNumber?: string;
     telephone?: string;
 }
