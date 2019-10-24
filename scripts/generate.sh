@@ -27,7 +27,7 @@ if ! type "curl" &> /dev/null; then
     exit 1
 fi
 
-API_SPEC="https://ravimosharksas.gitlab.io/apis/contract/documentation/openapi.json"
+API_SPEC="https://ravimosharksas.gitlab.io/apis/task/documentation/openapi.json"
 VERSION="1.0.0"
 function usage(){
     echo "1 - swagger spec location."
@@ -54,7 +54,7 @@ ${SWAGGER_COMMAND} \
     -c swaggerconfig.json \
     -o src \
     --model-package=models --api-package=api \
-    --git-repo-id=ravimosharksas/apis/contract/libs/angular
+    --git-repo-id=ravimosharksas/apis/task/libs/typescript
 
 # TO KNOW ABOUT AVAILABLE CONFIGURATION PROPERTIES
 # java -jar ${SWAGGER_JAR} config-help -l typescript-angular
