@@ -37,6 +37,8 @@ export interface Tasks {
     taskTime?: number;
     ratingClient?: number;
     ratingTech?: number;
+    gpsStatusCode?: number;
+    code?: number;
     interventions?: Array<Interventions>;
     interventionsId?: Array<number>;
     createdAt?: string;
