@@ -155,6 +155,24 @@ import { environment } from '../environments/environment';
 export class AppModule { }
 ```
 
+## Generate
+
+To regenerate the library from spec, first create a .env file with the following content:
+
+```bash
+SWAGGER_API_SPEC="" #Default value: ../../documentation/dist/openapi.yaml
+```
+
+And then just execute the following script:
+
+```bash
+mkdir -p scripts && \
+curl -o scripts/swagger_binaries_downloader.sh -L https://singletonsd.gitlab.io/scripts/swagger/latest/swagger_binaries_downloader.sh && \
+curl -o scripts/swagger_generate_angular.sh -L https://singletonsd.gitlab.io/scripts/swagger/latest/swagger_generate_angular.sh && \
+chmod +x scripts/swagger_binaries_downloader.sh scripts/swagger_generate_angular.sh && \
+./scripts/swagger_generate_angular.sh
+```
+
 ----------------------
 
 © [Singleton SD](http://singletonsd.com), France, 2019.
